@@ -11,7 +11,7 @@ def student_page(request):
         form = StudentForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('/student/')  
+            return redirect('index')  
     context = {
         'form': form
     }
