@@ -1,7 +1,8 @@
-from django.shortcuts import render
-
-def index(request):
-    return render(request, 'student/index.html')
+from .forms import StudentForm
 
 def student_page(request):
-    return render(request,'student/student.html')
+    	form = StudentForm()
+    	context = {
+        	'form': form
+    	}
+    return render(request,'student/student.html', context)
